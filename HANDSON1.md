@@ -25,6 +25,7 @@ Then, after entering the required information, click **Crete repository from tem
 ## 2. Clone a forked repository to your local
 
 Let's clone a forked repository
+(Ensure that you have SSH setup from your Terminal to the Git Hub Repo. HTTPS Username/Password is no longer supported.)
 
 ```sh
 git clone  https://github.com/YOUR-USERNAME/REPOSITORY-NAME launchable-hands-on
