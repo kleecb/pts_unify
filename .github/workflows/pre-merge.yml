@@ -4,7 +4,10 @@ on:
   pull_request:
   workflow_dispatch:
 
-jobs:
+env:
+  LAUNCHABLE_TOKEN: ${{ secrets.LAUNCHABLE_TOKEN }}
+
+  jobs:
   PreMergeTest:
     runs-on: ubuntu-latest
     steps:
@@ -18,6 +21,8 @@ jobs:
 +         python-version: '3.13'
 +     - name: Install Launchable command
 +       run: pip install --user --upgrade launchable~=1.0
+      - name: Launchable verify
+        run: launchable verify
       - name: Compile
         run: mvn compile
       - name: Test
