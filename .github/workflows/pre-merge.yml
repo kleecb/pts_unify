@@ -1,8 +1,9 @@
 name: Launchable Demo Pre-Merge
 
 on:
-  pull_request:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 env:
   LAUNCHABLE_TOKEN: ${{ secrets.LAUNCHABLE_TOKEN }}
