@@ -35,7 +35,7 @@ jobs:
       - name: Compile
         run: mvn compile
       - name: Test
-        run: mvn test
+        run: mvn test -Dsurefire.includesFile=launchable-subset.txt
       - name: Launchable record tests
         if: always()
         run: launchable record tests maven ./**/target/surefire-reports
