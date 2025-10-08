@@ -28,6 +28,10 @@ jobs:
         run: launchable verify
       - name: Launchable record build
         run: launchable record build --name ${{ github.run_id }}
+      - name: launchable subset
+        run: |
+          launchable subset --observation --target 50% maven src/test/java > launchable-subset.txt
+          cat launchable-subset.txt
       - name: Compile
         run: mvn compile
       - name: Test
