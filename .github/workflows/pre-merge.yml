@@ -1,4 +1,4 @@
-name: Launchable Demo
+name: Launchable Demo Pre-Merge
 
 on:
   pull_request:
