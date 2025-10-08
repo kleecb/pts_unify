@@ -30,10 +30,9 @@ jobs:
         run: launchable record build --name ${{ github.run_id }}
       - name: launchable subset
         run: |
-          launchable subset --observation --target 50% maven src/test/java > launchable-subset.txt
+          mvn compile
+          launchable subset --target 50% maven src/test/java > launchable-subset.txt
           cat launchable-subset.txt
-      - name: Compile
-        run: mvn compile
       - name: Test
         run: mvn test -Dsurefire.includesFile=launchable-subset.txt
       - name: Launchable record tests
